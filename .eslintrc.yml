@@ -1,0 +1,46 @@
+env:
+  browser: true
+  node: true
+  es6: true
+extends:
+  - airbnb-typescript
+  - airbnb/hooks
+  - plugin:prettier/recommended
+globals:
+  Atomics: readonly
+  SharedArrayBuffer: readonly
+parser: "@typescript-eslint/parser"
+ignorePatterns:
+  - "**/*.d.ts"
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 2018
+  sourceType: module
+plugins:
+  - react
+  - "@typescript-eslint"
+rules:
+  react/jsx-filename-extension:
+    - 1
+    - extensions:
+        - ".tsx"
+        - ".jsx"
+  import/no-unresolved: off
+  import/extensions: off
+  react/jsx-props-no-spreading: off
+  no-shadow: warn
+  import/no-extraneous-dependencies:
+    - error
+    - devDependencies:
+        - "**/*.test.ts"
+        - "**/*.test.tsx"
+        - "**/*.spec.ts"
+        - "**/*.spec.tsx"
+        - "**/*.stories.ts"
+        - "**/*.stories.tsx"
+  react/jsx-one-expression-per-line: off
+  react/jsx-curly-newline: off
+  no-plusplus: off
+  "@typescript-eslint/indent": off
+  no-underscore-dangle: off
