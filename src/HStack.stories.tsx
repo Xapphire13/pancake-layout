@@ -4,7 +4,7 @@ import { withKnobs, number, select } from '@storybook/addon-knobs';
 import HStack from './HStack';
 import StackItem from './StackItem';
 
-storiesOf('HStack', module)
+storiesOf('Stacks/HStack', module)
   .addDecorator(withKnobs)
   .add('Default', () => (
     <HStack>

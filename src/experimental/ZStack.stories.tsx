@@ -4,7 +4,7 @@ import ZStack from './ZStack';
 import AlignmentContainer from '../AlignmentContainer';
 import Spacing from '../Spacing';
 
-storiesOf('ZStack (experimental)', module).add('Default', () => (
+storiesOf('Experimental/ZStack', module).add('Default', () => (
   <ZStack>
     <AlignmentContainer
       vAnchor="bottom"

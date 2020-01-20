@@ -4,7 +4,7 @@ import { select, number, withKnobs } from '@storybook/addon-knobs';
 import VStack from './VStack';
 import StackItem from './StackItem';
 
-storiesOf('VStack', module)
+storiesOf('Stacks/VStack', module)
   .addDecorator(withKnobs)
   .add('Default', () => (
     <VStack>
