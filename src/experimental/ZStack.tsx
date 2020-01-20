@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createUseStyles } from 'react-jss';
-import styles from './utils/styles';
-import { ensureStackItem } from './private/PrivateStackItem';
+import styles from '../utils/styles';
+import { ensureStackItem } from '../private/PrivateStackItem';
 
 export type ZStackProps = {
   children: React.ReactNode[];
