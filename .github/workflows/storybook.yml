@@ -4,14 +4,18 @@ on: [push]
 
 jobs:
   build:
-    if: false
+#     if: false
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
     - name: Install Dependencies
       run: npm i
-    - name: Deploy to GitHub Pages
-      run: npm run deploy-storybook -- --ci
+    - name: Test
+      run: git push --force --quiet https://${GH_TOKEN}@github.com/Xapphire13/pancake-layout master:test
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#     - name: Deploy to GitHub Pages
+#       run: npm run deploy-storybook -- --ci
+#       env:
+#         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
