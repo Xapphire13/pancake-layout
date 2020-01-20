@@ -10,16 +10,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install Dependencies
       run: npm i
-    - name: Build Storybook
-      run: npm run build-storybook
     - name: Deploy to GitHub Pages
-      run: |
-        cd storybook-static
-        git init
-        git config user.name "GH Pages Bot"
-        git config user.email "hello@ghbot.com"
-        git add :/
-        git commit -m "Deploy Storybook to GitHub Pages"
-        git push --force --quiet https://${DEPLOY_TOKEN}@github.com/Xapphire13/pancake-layout master:gh-pages
+      run: npm run deploy-storybook -- --ci
       env:
-        DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        GH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
