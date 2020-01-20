@@ -1,0 +1,15 @@
+name: Deploy storybook
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install Dependencies
+      run: npm i
+    - name: Run a multi-line script
+      run: npm run deploy-storybook -- --ci --t ${{ secrets.GITHUB_TOKEN }}
