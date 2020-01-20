@@ -12,4 +12,4 @@ jobs:
     - name: Install Dependencies
       run: npm i
     - name: Deploy to GitHub Pages
-      run: npm run deploy-storybook -- --ci --t=${{ secrets.GITHUB_TOKEN }}
+      run: GH_TOKEN=${{ secrets.GITHUB_TOKEN }} npm run deploy-storybook -- --ci
