@@ -4,7 +4,7 @@ import ZStack from './ZStack';
 import StackItem from './StackItem';
 
 storiesOf('ZStack', module).add('Default', () => (
-  <ZStack>
+  <ZStack style={{ border: '1px dashed black' }}>
     <div style={{ backgroundColor: 'blue', color: 'white' }}>One</div>
     <StackItem style={{ backgroundColor: 'red', color: 'white', height: 200 }}>
       Two

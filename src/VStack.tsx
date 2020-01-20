@@ -6,15 +6,36 @@ import { ensureStackItem } from './private/PrivateStackItem';
 export type VStackProps = {
   children: React.ReactNode[];
 
-  horizontalFill?: boolean;
   gap?: number;
+  justify?: 'start' | 'end' | 'center' | 'space-between' | 'space-evenly';
+  alignItems?: 'start' | 'end' | 'center' | 'stretch';
 } & React.HTMLAttributes<HTMLDivElement>;
 
 const useStyles = createUseStyles({
   container: {
     position: 'relative',
     display: 'flex',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    justifyContent: ({ justify }: VStackProps) => {
+      switch (justify) {
+        case 'start':
+          return 'flex-start';
+        case 'end':
+          return 'flex-end';
+        default:
+          return justify;
+      }
+    },
+    alignItems: ({ alignItems }: VStackProps) => {
+      switch (alignItems) {
+        case 'start':
+          return 'flex-start';
+        case 'end':
+          return 'flex-end';
+        default:
+          return alignItems;
+      }
+    }
   },
   gap: {
     marginTop: ({ gap }: VStackProps) => gap
@@ -23,18 +44,18 @@ const useStyles = createUseStyles({
 
 export default function VStack({
   children,
-  horizontalFill,
   gap,
+  justify,
+  alignItems = 'stretch',
   ...htmlProps
 }: VStackProps) {
-  const classes = useStyles({ gap });
+  const classes = useStyles({ gap, justify, alignItems });
   return (
     <div {...htmlProps} {...styles(htmlProps.className, classes.container)}>
       {children.map((child, i) =>
         ensureStackItem(child, {
           key: i,
-          ...styles(gap && i > 0 && classes.gap),
-          horizontalFill
+          ...styles(gap && i > 0 && classes.gap)
         })
       )}
     </div>
