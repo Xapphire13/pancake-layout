@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Install Dependencies
       run: npm i
-    - name: Build Storybook
-      run: npm run build-storybook
     - name: Deploy to GitHub Pages
-      run: git push --force --quiet https://${{ secrets.GITHUB_TOKEN }}@github.com/Xapphire13/pancake-layout HEAD:gh-pages
+      run: npm run deploy-storybook -- --ci
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
