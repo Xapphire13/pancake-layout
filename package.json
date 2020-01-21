@@ -2,10 +2,14 @@
   "name": "pancake-layout",
   "version": "0.0.0",
   "description": "Dead simple layout in React",
+  "main": "./dist/index.js",
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "deploy-storybook": "storybook-to-ghpages -o storybook-static"
+    "deploy-storybook": "storybook-to-ghpages -o storybook-static",
+    "build": "tsc",
+    "lint": "eslint --ext .ts,.tsx src/",
+    "lint:fix": "eslint --fix --ext .ts,.tsx src/"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,8 @@
+.storybook/
+storybook-static/
+.vscode/
+src/
+*.stories.js
+tsconfig.json
+.prettierrc.yaml
+.eslintrc.yml
