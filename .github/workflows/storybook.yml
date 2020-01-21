@@ -1,6 +1,11 @@
 name: Deploy storybook
 
-on: [push]
+on:
+  push:
+    branches:
+    - master
+    paths:
+    - src
 
 jobs:
   build:
