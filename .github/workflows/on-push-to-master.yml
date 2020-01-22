@@ -15,6 +15,8 @@ jobs:
         uses: foodee/pr-includes-file-change@1.0.0
         with:
           paths: ^src/
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Install Dependencies
         if: steps.changed.outputs.matched == 'true'
         run: npm i
