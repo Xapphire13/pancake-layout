@@ -6,3 +6,4 @@ src/
 tsconfig.json
 .prettierrc.yaml
 .eslintrc.yml
+.github/
