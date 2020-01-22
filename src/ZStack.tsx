@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createUseStyles } from 'react-jss';
-import styles from '../utils/styles';
-import ensureStackItem from '../utils/ensureStackItem';
+import styles from './utils/styles';
+import ensureStackItem from './utils/ensureStackItem';
 import ZStackItem, {
   ZStackItemProps,
   PrivateZStackItemProps
