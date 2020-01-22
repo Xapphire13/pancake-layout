@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, number, select } from '@storybook/addon-knobs';
 import HStack from './HStack';
-import StackItem from './StackItem';
+import HStackItem from './HStackItem';
 
 storiesOf('Stacks/HStack', module)
   .addDecorator(withKnobs)
@@ -23,9 +23,9 @@ storiesOf('Stacks/HStack', module)
   .add('Item Grow', () => (
     <HStack>
       <div style={{ backgroundColor: 'blue', color: 'white' }}>One</div>
-      <StackItem style={{ backgroundColor: 'red', color: 'white' }} grow>
+      <HStackItem style={{ backgroundColor: 'red', color: 'white' }} grow>
         Two
-      </StackItem>
+      </HStackItem>
       <div style={{ backgroundColor: 'green', color: 'white' }}>Three</div>
     </HStack>
   ))
@@ -52,14 +52,14 @@ storiesOf('Stacks/HStack', module)
         'stretch'
       )}
     >
-      <StackItem style={{ backgroundColor: 'blue', color: 'white' }}>
+      <HStackItem style={{ backgroundColor: 'blue', color: 'white' }}>
         One
-      </StackItem>
-      <StackItem style={{ backgroundColor: 'red', color: 'white' }}>
+      </HStackItem>
+      <HStackItem style={{ backgroundColor: 'red', color: 'white' }}>
         Two
-      </StackItem>
-      <StackItem style={{ backgroundColor: 'green', color: 'white' }}>
+      </HStackItem>
+      <HStackItem style={{ backgroundColor: 'green', color: 'white' }}>
         Three
-      </StackItem>
+      </HStackItem>
     </HStack>
   ));

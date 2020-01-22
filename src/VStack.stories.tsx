@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { select, number, withKnobs } from '@storybook/addon-knobs';
 import VStack from './VStack';
-import StackItem from './StackItem';
+import VStackItem from './VStackItem';
 
 storiesOf('Stacks/VStack', module)
   .addDecorator(withKnobs)
@@ -25,9 +25,9 @@ storiesOf('Stacks/VStack', module)
   .add('Item Grow', () => (
     <VStack style={{ height: 400 }}>
       <div style={{ backgroundColor: 'blue', color: 'white' }}>One</div>
-      <StackItem style={{ backgroundColor: 'red', color: 'white' }} grow>
+      <VStackItem style={{ backgroundColor: 'red', color: 'white' }} grow>
         Two
-      </StackItem>
+      </VStackItem>
       <div style={{ backgroundColor: 'green', color: 'white' }}>Three</div>
     </VStack>
   ))

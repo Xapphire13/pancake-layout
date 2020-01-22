@@ -1,7 +1,8 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 import styles from './utils/styles';
-import { ensureStackItem } from './private/PrivateStackItem';
+import ensureStackItem from './utils/ensureStackItem';
+import VStackItem from './VStackItem';
 
 export type VStackProps = {
   children: React.ReactNode[];
@@ -53,7 +54,7 @@ export default function VStack({
   return (
     <div {...htmlProps} {...styles(htmlProps.className, classes.container)}>
       {children.map((child, i) =>
-        ensureStackItem(child, {
+        ensureStackItem(VStackItem, child, {
           key: i,
           ...styles(gap && i > 0 && classes.gap)
         })

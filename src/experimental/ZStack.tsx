@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import styles from '../utils/styles';
-import { ensureStackItem } from '../private/PrivateStackItem';
+import ensureStackItem from '../utils/ensureStackItem';
+import ZStackItem, {
+  ZStackItemProps,
+  PrivateZStackItemProps
+} from './ZStackItem';
 
 export type ZStackProps = {
   children: React.ReactNode[];
@@ -33,11 +37,14 @@ export default function ZStack({ children, ...htmlProps }: ZStackProps) {
   return (
     <div {...htmlProps} {...styles(htmlProps.className, classes.container)}>
       {children.map((child, i) =>
-        ensureStackItem(child, {
-          key: i,
-          absolute: true,
-          onSized: handleChildSized
-        })
+        ensureStackItem<ZStackItemProps & PrivateZStackItemProps>(
+          ZStackItem,
+          child,
+          {
+            key: i,
+            onSized: handleChildSized
+          }
+        )
       )}
     </div>
   );
