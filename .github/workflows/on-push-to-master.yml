@@ -1,3 +1,4 @@
+name: Push to Master
 on:
   push:
     branches:
@@ -10,18 +11,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Get Changed Files
-        id: changed
-        uses: foodee/pr-includes-file-change@1.0.0
-        with:
-          paths: ^src/
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Install Dependencies
-        if: steps.changed.outputs.matched == 'true'
         run: npm i
       - name: Deploy to GitHub Pages
-        if: steps.changed.outputs.matched == 'true'
         run: npm run deploy-storybook -- --ci
         env:
           GH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
