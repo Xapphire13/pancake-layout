@@ -20,6 +20,63 @@ storiesOf('Stacks/HStack', module)
       <div style={{ backgroundColor: 'green', color: 'white' }}>Three</div>
     </HStack>
   ))
+  .add('With wrap', () => (
+    <HStack wrap style={{ maxWidth: 200 }}>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+    </HStack>
+  ))
+  .add('With wrap and gap', () => (
+    <HStack wrap gap={number('Gap Size', 8)} style={{ maxWidth: 200 }}>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+    </HStack>
+  ))
+  .add('With wrap and VGap', () => (
+    <HStack wrap vGap={number('Gap Size', 8)} style={{ maxWidth: 200 }}>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+    </HStack>
+  ))
   .add('Item Grow', () => (
     <HStack>
       <div style={{ backgroundColor: 'blue', color: 'white' }}>One</div>

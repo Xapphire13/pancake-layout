@@ -17,11 +17,14 @@ export type SpacingProps = {
 const useStyles = createUseStyles({
   container: {
     position: 'relative',
-    display: ({ inline }) => (inline ? 'inline-block' : undefined),
-    marginTop: ({ top, vertical }: SpacingProps) => vertical ?? top,
-    marginBottom: ({ bottom, vertical }: SpacingProps) => vertical ?? bottom,
-    marginLeft: ({ before, horizontal }: SpacingProps) => horizontal ?? before,
-    marginRight: ({ after, horizontal }: SpacingProps) => horizontal ?? after
+    display: ({ inline }) => (inline ? 'inline-block' : 'block'),
+    marginTop: ({ top, vertical }: SpacingProps) => vertical ?? top ?? 0,
+    marginBottom: ({ bottom, vertical }: SpacingProps) =>
+      vertical ?? bottom ?? 0,
+    marginLeft: ({ before, horizontal }: SpacingProps) =>
+      horizontal ?? before ?? 0,
+    marginRight: ({ after, horizontal }: SpacingProps) =>
+      horizontal ?? after ?? 0
   }
 });
 

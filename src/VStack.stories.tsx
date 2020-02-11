@@ -22,6 +22,63 @@ storiesOf('Stacks/VStack', module)
       </VStack>
     );
   })
+  .add('With wrap', () => (
+    <VStack wrap style={{ maxHeight: 100 }}>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+    </VStack>
+  ))
+  .add('With wrap and gap', () => (
+    <VStack wrap gap={number('Gap Size', 8)} style={{ maxHeight: 100 }}>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+    </VStack>
+  ))
+  .add('With wrap and HGap', () => (
+    <VStack wrap hGap={number('Gap Size', 8)} style={{ maxHeight: 100 }}>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+      <div style={{ backgroundColor: 'blue', color: 'white' }}>Blue</div>
+      <div style={{ backgroundColor: 'red', color: 'white' }}>Red</div>
+      <div style={{ backgroundColor: 'green', color: 'white' }}>Green</div>
+    </VStack>
+  ))
   .add('Item Grow', () => (
     <VStack style={{ height: 400 }}>
       <div style={{ backgroundColor: 'blue', color: 'white' }}>One</div>

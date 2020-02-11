@@ -50,7 +50,7 @@ export default function ZStackItem(props: ZStackItemProps) {
     vAnchor,
     ...htmlProps
   } = props as ZStackItemProps & PrivateZStackItemProps;
-  const containerRef = useRef<HTMLDivElement>();
+  const containerRef = useRef<HTMLDivElement>(null);
   const classes = useStyles();
 
   useEffect(() => {

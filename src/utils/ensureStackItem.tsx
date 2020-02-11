@@ -19,7 +19,7 @@ export default function ensureStackItem<
     <StackType
       {...extraProps}
       {...childProps}
-      {...styles(childProps.className, extraProps.className)}
+      {...styles(childProps.className, extraProps?.className)}
     />
   );
 }

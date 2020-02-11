@@ -8,6 +8,9 @@ export type VStackProps = {
   children: React.ReactNode[];
 
   gap?: number;
+  hGap?: number;
+  vGap?: number;
+  wrap?: boolean;
   justify?: 'start' | 'end' | 'center' | 'space-between' | 'space-evenly';
   alignItems?: 'start' | 'end' | 'center' | 'stretch';
 } & React.HTMLAttributes<HTMLDivElement>;
@@ -17,6 +20,9 @@ const useStyles = createUseStyles({
     position: 'relative',
     display: 'flex',
     flexDirection: 'column',
+    marginLeft: ({ hGap, gap }: VStackProps) => -(hGap ?? gap ?? 0),
+    marginTop: ({ vGap, gap }: VStackProps) => -(vGap ?? gap ?? 0),
+    flexWrap: ({ wrap }: VStackProps) => (wrap ? 'wrap' : 'nowrap'),
     justifyContent: ({ justify }: VStackProps) => {
       switch (justify) {
         case 'start':
@@ -24,7 +30,7 @@ const useStyles = createUseStyles({
         case 'end':
           return 'flex-end';
         default:
-          return justify;
+          return 'normal';
       }
     },
     alignItems: ({ alignItems }: VStackProps) => {
@@ -34,12 +40,13 @@ const useStyles = createUseStyles({
         case 'end':
           return 'flex-end';
         default:
-          return alignItems;
+          return 'normal';
       }
     }
   },
-  gap: {
-    marginTop: ({ gap }: VStackProps) => gap
+  stackItem: {
+    marginLeft: ({ gap, hGap }: VStackProps) => hGap ?? gap ?? 0,
+    marginTop: ({ gap, vGap }: VStackProps) => vGap ?? gap ?? 0
   }
 });
 
@@ -48,15 +55,18 @@ export default function VStack({
   gap,
   justify,
   alignItems = 'stretch',
+  hGap,
+  vGap,
+  wrap,
   ...htmlProps
 }: VStackProps) {
-  const classes = useStyles({ gap, justify, alignItems });
+  const classes = useStyles({ gap, vGap, hGap, justify, alignItems, wrap });
   return (
     <div {...htmlProps} {...styles(htmlProps.className, classes.container)}>
       {children.map((child, i) =>
         ensureStackItem(VStackItem, child, {
           key: i,
-          ...styles(gap && i > 0 && classes.gap)
+          ...styles(classes.stackItem)
         })
       )}
     </div>

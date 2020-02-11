@@ -19,8 +19,8 @@ type StyleData = {
 const useStyles = createUseStyles({
   container: {
     position: 'relative',
-    width: ({ width }: StyleData) => width,
-    height: ({ height }: StyleData) => height
+    width: ({ width }: StyleData) => width ?? 'auto',
+    height: ({ height }: StyleData) => height ?? 'auto'
   }
 });
 

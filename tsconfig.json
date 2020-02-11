@@ -5,7 +5,9 @@
     "outDir": "./dist",
     "jsx": "react",
     "esModuleInterop": true,
-    "declaration": true
+    "declaration": true,
+    "strictNullChecks": true,
+    "skipLibCheck": true
   },
   "include": [
     "./src"
