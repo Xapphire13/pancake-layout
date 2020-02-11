@@ -30,7 +30,7 @@ const useStyles = createUseStyles({
         case 'end':
           return 'flex-end';
         default:
-          return 'normal';
+          return justify ?? 'normal';
       }
     },
     alignItems: ({ alignItems }: HStackProps) => {
@@ -40,7 +40,7 @@ const useStyles = createUseStyles({
         case 'end':
           return 'flex-end';
         default:
-          return 'normal';
+          return alignItems ?? 'normal';
       }
     }
   },
