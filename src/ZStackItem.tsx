@@ -84,3 +84,5 @@ export default function ZStackItem(props: ZStackItemProps) {
     </div>
   );
 }
+
+ZStackItem.displayName = 'ZStackItem';

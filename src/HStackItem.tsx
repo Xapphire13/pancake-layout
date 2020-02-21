@@ -33,3 +33,5 @@ export default function HStackItem({
     </div>
   );
 }
+
+HStackItem.displayName = 'HStackItem';

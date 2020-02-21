@@ -33,3 +33,5 @@ export default function VStackItem({
     </div>
   );
 }
+
+VStackItem.displayName = 'VStackItem';
