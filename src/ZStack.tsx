@@ -36,16 +36,18 @@ export default function ZStack({ children, ...htmlProps }: ZStackProps) {
 
   return (
     <div {...htmlProps} {...styles(htmlProps.className, classes.container)}>
-      {children.map((child, i) =>
-        ensureStackItem<ZStackItemProps & PrivateZStackItemProps>(
-          ZStackItem,
-          child,
-          {
-            key: i,
-            onSized: handleChildSized
-          }
-        )
-      )}
+      {children
+        .filter(child => child)
+        .map((child, i) =>
+          ensureStackItem<ZStackItemProps & PrivateZStackItemProps>(
+            ZStackItem,
+            child,
+            {
+              key: i,
+              onSized: handleChildSized
+            }
+          )
+        )}
     </div>
   );
 }

@@ -63,12 +63,14 @@ export default function VStack({
   const classes = useStyles({ gap, vGap, hGap, justify, alignItems, wrap });
   return (
     <div {...htmlProps} {...styles(htmlProps.className, classes.container)}>
-      {children.map((child, i) =>
-        ensureStackItem(VStackItem, child, {
-          key: i,
-          ...styles(classes.stackItem)
-        })
-      )}
+      {children
+        .filter(child => child)
+        .map((child, i) =>
+          ensureStackItem(VStackItem, child, {
+            key: i,
+            ...styles(classes.stackItem)
+          })
+        )}
     </div>
   );
 }

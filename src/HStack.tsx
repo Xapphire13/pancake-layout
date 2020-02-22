@@ -70,12 +70,14 @@ export default function HStack({
   } as HStackProps);
   return (
     <div {...htmlProps} {...styles(htmlProps.className, classes.container)}>
-      {children.map((child, i) =>
-        ensureStackItem(HStackItem, child, {
-          key: i,
-          ...styles(classes.stackItem)
-        })
-      )}
+      {children
+        .filter(child => child)
+        .map((child, i) =>
+          ensureStackItem(HStackItem, child, {
+            key: i,
+            ...styles(classes.stackItem)
+          })
+        )}
     </div>
   );
 }
