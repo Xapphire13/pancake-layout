@@ -10,7 +10,8 @@ export type HStackItemProps = {
 
 const useStyles = createUseStyles({
   container: {
-    position: 'relative'
+    position: 'relative',
+    minWidth: 0
   },
   grow: {
     flexGrow: 1
